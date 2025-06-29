@@ -1,6 +1,5 @@
 import express from 'express';
-import { getTodos, getPorId, getPorCampo, crear, actualizar, eliminar } from './eventosService.js'; // Importar las funciones del servicio
-
+import { getTodos, getPorId, getPorCampo, crear, actualizar, eliminar } from './eventosService.js'; 
 const router = express.Router();
 
 router.get('/eventos', async (req, res) => {
@@ -21,7 +20,7 @@ router.get('/eventos/id/:id', async (req, res) => {
   }
 });
 
-// Otros endpoints para eventos...
+
 router.post('/eventos/crearEvento', async (req, res) => {
   try {
     const nuevoEvento = await crear(req.body);
@@ -31,6 +30,5 @@ router.post('/eventos/crearEvento', async (req, res) => {
   }
 });
 
-// Más rutas para actualizar, eliminar, etc.
 
 export default router;
