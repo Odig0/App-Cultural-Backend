@@ -1,6 +1,7 @@
 import express from 'express';
 import { db } from './firebase.js'; // Importar la configuración de Firebase
 import { crearHistorico, obtenerHistoricoPorUsuario, obtenerTodosLosHistoricos } from './historicoService.js'; // Importar las funciones del servicio
+import axios from 'axios';
 const router = express.Router();
 
 // Colección de eventos y histórico
@@ -85,4 +86,9 @@ router.get('/historico-eventos', async (req, res) => {
     res.status(500).json({ error: 'Error al obtener todos los históricos', details: error.message });
   }
 });
+
+
+
+
+
 export default router;

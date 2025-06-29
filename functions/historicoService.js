@@ -25,3 +25,14 @@ export const obtenerTodosLosHistoricos = async () => {
     throw new Error('Error al obtener todos los históricos: ' + error.message);
   }
 };
+
+export const preguntarEvento = async (prompt) => {
+  try {
+    const response = await axios.post('https://4d02-190-104-20-155.ngrok-free.app/api/llm/chat', {
+      prompt: prompt
+    });
+    return response.data;
+  } catch (error) {
+    throw new Error('Error al consultar el modelo LLM: ' + error.message);
+  }
+};
